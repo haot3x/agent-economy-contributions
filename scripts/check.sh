@@ -37,5 +37,6 @@ PY
 )
 (
     cd erc-8470
+    "$forge_bin" fmt --check consumer/LiquidityObservationReader.sol test/ConsumerPolicy.t.sol
     "$forge_bin" test -vv
 )
