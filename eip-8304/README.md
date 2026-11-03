@@ -2,6 +2,16 @@
 
 Author: Ted (@haot3x)
 
+## Go proof integration (3 November 2026)
+
+[The proof integration harness](proof-integration/README.md) now connects the
+pinned upstream Go prover/verifier to this Python consumer using generated-chain
+logs. It covers wallet changes, overlapping pages and boundary refill, plus
+proof/header rejection. The standalone Python fixtures below still assume
+verified input; the new Go harness performs that verification before feeding them.
+It is a local integration test, not a live RPC client or a Willow proof adapter.
+
+## Standalone application fixtures
 
 Run `python3 -m unittest -v log_pages reverse_log_pages` (Python standard library only). **32 tests pass: eight original forward-consumer cases and twenty-four latest-first cases, including four whole-block soft-cap cases.** Download both Python files into the same directory. `python3 log_pages.py` still runs the original eight tests by itself.
 
