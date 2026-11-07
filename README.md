@@ -8,6 +8,7 @@ Small, reproducible application fixtures and pinned upstream test runs for Ether
 | --- | --- | --- |
 | [eip-8304](./eip-8304/) | My normalized log consumer: wallet changes, pagination, retries, and whole-block soft-cap handling | 32 Python tests pass |
 | [erc-8470](./erc-8470/) | Toll's unmodified registry and suite at `0d6a107`, plus a local liquidity reader and regression cases | 47 upstream + 12 consumer tests pass |
+| [erc-8350](./erc-8350/) | External wallet transaction tests against official `8b11215`: ERC-1271, Safe 1.4.1 and EIP-7702 | 34 scenarios + 1 negative control pass |
 
 The EIP-8304 fixture checks application bookkeeping, not proof validity or a live RPC. The ERC-8470 directory reproduces the author's mocked tests and adds a narrow local reader. This is not an independent registry implementation, live-chain validation, or security audit. Proposal numbers do not imply Final status.
 
@@ -26,6 +27,8 @@ FORGE_BIN=/absolute/path/to/forge bash scripts/check.sh
 ```
 
 The script checks the four vendored upstream files against their SHA-256 manifest, checks the local Solidity formatting, then runs all **91 tests**. GitHub Actions runs the same command.
+
+The ERC-8350 wallet suite has its own [reproduction instructions](./erc-8350/README.md) and CI job. It requires Node 24 and Anvil in addition to Forge, and runs separately from the 91 existing tests.
 
 ## Discussion and provenance
 

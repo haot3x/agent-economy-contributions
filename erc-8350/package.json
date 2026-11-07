@@ -1,0 +1,7 @@
+{
+  "name": "erc-8350-external-wallet-review",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "node review.mjs"},
+  "dependencies": {"ethers": "6.17.0"}
+}
