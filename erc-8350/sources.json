@@ -1,0 +1,17 @@
+{
+  "revision": "8b11215cf267f710b49ea003384e678bcf953eae",
+  "files": {
+    "AgentMemoryStateRegistry.sol": {
+      "url": "https://raw.githubusercontent.com/ethereum/ERCs/8b11215cf267f710b49ea003384e678bcf953eae/assets/erc-8350/AgentMemoryStateRegistry.sol",
+      "sha256": "94c7f39920205ae581e6537828a80a3dcfeb0a283c833ed2b50bc10927a292c3"
+    },
+    "ECDSA.sol": {
+      "url": "https://raw.githubusercontent.com/ethereum/ERCs/8b11215cf267f710b49ea003384e678bcf953eae/assets/erc-8350/ECDSA.sol",
+      "sha256": "74d0a828f70af9384457e2cf5165638dcc44a7b9749b8dc80cb7c9bd2ba2ccf0"
+    },
+    "IAgentMemoryState.sol": {
+      "url": "https://raw.githubusercontent.com/ethereum/ERCs/8b11215cf267f710b49ea003384e678bcf953eae/assets/erc-8350/IAgentMemoryState.sol",
+      "sha256": "274bfee5de979ea164abcf30af6b9dace1fccdb42bee4cf59bdeb0a9621be93a"
+    }
+  }
+}

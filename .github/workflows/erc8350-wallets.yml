@@ -1,0 +1,34 @@
+name: ERC-8350 external wallet review
+
+on:
+  push:
+    paths: ['erc-8350/**', '.github/workflows/erc8350-wallets.yml']
+  pull_request:
+    paths: ['erc-8350/**', '.github/workflows/erc8350-wallets.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wallets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+      - uses: foundry-rs/foundry-toolchain@dba66c27052e63476d886f22216e119ba7e615bf # v1
+        with:
+          version: v1.7.1
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: erc-8350
+      - run: npm test
+        working-directory: erc-8350
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: erc8350-wallets-${{ github.sha }}
+          path: erc-8350/results/
+          if-no-files-found: error
